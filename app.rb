@@ -181,13 +181,104 @@ module Sam
     end
 
     get '/os', :rel => "open_source", :desc => "A list of open source projects and accomplishments" do
-      status 500
-      json :error => "Not yet implemented"
+      json([
+          {
+              :collection_title => "Notable projects used in production by companies right now.",
+              :items => [
+                  {
+                      :title => 'pyapns',
+                      :description => 'A language-agnostic Apple Push Notification Service provider with multi-app support',
+                      :links => [
+                          {
+                              :rel => 'github',
+                              :link => 'https://github.com/samuraisam/pyapns'
+                          },
+                          {
+                              :rel => 'notable_user',
+                              :link => 'http://instagram.com'
+                          }
+                      ]
+                  },
+                  {
+                      :title => 'django-json-rpc',
+                      :description => 'Simplified but feature rich JSON-RPC servers in Django',
+                      :links => [
+                          {
+                              :rel => 'github',
+                              :link => 'https://github.com/samuraisam/django-json-rpc'
+                          }
+                      ]
+                  },
+                  {
+                      :title => 'time_uuid',
+                      :description => 'A handy-dandy class for dealing with UUIDv1 (TimeUUID) in Python',
+                      :links => [
+                          {
+                              :rel => 'github',
+                              :link => 'https://github.com/samuraisam/time_uuid'
+                          },
+                          {
+                              :rel => 'docs',
+                              :link => 'http://packages.python.org/time-uuid/'
+                          }
+                      ]
+                  },
+                  {
+                      :title => 'requisite',
+                      :description => 'Python dependencies bundler',
+                      :links => [
+                          {
+                              :rel => 'github',
+                              :link => 'https://github.com/samuraisam/requisite'
+                          }
+                      ]
+                  },
+                  {
+                      :title => 'cycloauth',
+                      :description => 'OAuth provider for the Cyclone web framework',
+                      :links => [
+                          {
+                              :rel => 'github',
+                              :link => 'https://github.com/samuraisam/cycloauth'
+                          }
+                      ]
+                  },
+                  {
+                      :title => 'readdit',
+                      :description => 'An open source Reddit client for iPad',
+                      :links => [
+                          {
+                              :rel => 'github',
+                              :link => 'https://github.com/samuraisam/readdit'
+                          },
+                          {
+                              :rel => 'subreddit',
+                              :link => 'http://www.reddit.com/r/readditapp/'
+                          }
+                      ]
+                  },
+                  {
+                      :title => 'DeferredKit',
+                      :description => 'An asynchronous programming library for iOS',
+                      :links => [
+                          {
+                              :rel => 'github',
+                              :link => 'https://github.com/samuraisam/DeferredKit'
+                          }
+                      ]
+                  }
+              ]
+          }
+      ])
     end
 
     get '/contact' do
-      status 500
-      json :error => "Not yet implemented"
+      json({
+          :email => 'samuel.sutch@gmail.com',
+          :twitter => '@ssutch',
+          :github => 'github.com/samuraisam',
+          :linkedin => 'linkedin.com/ssutch'
+      })
     end
 
     post '/contact', :rel => "contact_info", :desc => "Contact Sam!" do
