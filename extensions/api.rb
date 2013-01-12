@@ -2,7 +2,12 @@ require 'sinatra/base'
 require 'sinatra/json'
 
 def api_url(request, resource_name)
-  "#{request.scheme}://#{request.host}:#{request.port}#{resource_name}"
+  if request.port == 80
+    port = ""
+  else
+    port = ":#{request.port}"
+  end
+  "#{request.scheme}://#{request.host}#{port}#{resource_name}"
 end
 
 
