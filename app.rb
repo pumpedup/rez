@@ -281,11 +281,6 @@ module Sam
       })
     end
 
-    post '/contact', :rel => "contact_info", :desc => "Contact Sam!" do
-      status 500
-      json :error => "Not yet implemented"
-    end
-
     run! if app_file == $0
   end
 end
