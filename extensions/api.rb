@@ -63,7 +63,12 @@ module Sam
       def app.patch(path, opts={}, &bk) api_method 'PATCH', path, opts, &bk end
 
       app.get '/', :rel => "root", :desc => "Enumeration of available services." do
-        json :services => settings.services.keys.map { |el| settings.services[el].render request }
+        json :services => settings.services.keys.map { |el| settings.services[el].render request },
+             :meta => {
+               :disclaimer => "This is my first Ruby/Sinatra project ever!",
+               :code => "http://github.com/pumpedup/rez",
+               :copyright => "Samuel Sutch 2013"
+             }
       end
     end
   end
