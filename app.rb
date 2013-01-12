@@ -20,7 +20,7 @@ module Sam
       json :error => "Not yet implemented"
     end
 
-    get '/contact', :rel => "contact_info", :desc => "Contact Sam!" do
+    get '/contact' do
       status 500
       json :error => "Not yet implemented"
     end
