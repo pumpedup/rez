@@ -1,2 +1,2 @@
 require './app.rb'
-run Rez
+run Sam::Rez
